@@ -1,0 +1,42 @@
+{
+  "name": "spec-workflow-kit",
+  "version": "0.1.0",
+  "description": "Open-source workflow kit that installs shared project planning commands for Cursor, Claude Code, and Codex.",
+  "type": "module",
+  "bin": {
+    "spec-workflow-kit": "./bin/spec-workflow-kit.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --test"
+  },
+  "author": "Wenjiahua",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yonsun-w/spec-workflow-kit.git"
+  },
+  "homepage": "https://github.com/Yonsun-w/spec-workflow-kit#readme",
+  "bugs": {
+    "url": "https://github.com/Yonsun-w/spec-workflow-kit/issues"
+  },
+  "keywords": [
+    "cursor",
+    "claude-code",
+    "codex",
+    "skill",
+    "workflow",
+    "spec",
+    "slash-command"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}

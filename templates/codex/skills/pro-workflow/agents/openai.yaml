@@ -1,0 +1,3 @@
+display_name: Pro Workflow
+short_description: Four-stage planning and documentation workflow for active software changes.
+default_prompt: Use the pro-workflow skill to initialize docs, explore a request, propose a change plan, or sync docs after coding.
