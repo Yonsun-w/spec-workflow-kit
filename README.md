@@ -19,7 +19,9 @@
 - `/pro-init`：从当前代码库初始化项目文档，完成“代码 -> 文档”的第一步 🏗️
 - `/explore`：围绕需求做探索和澄清，把问题聊清楚 🔍
 - `/propose`：生成正式提案，明确需求变更、风险点、开发任务、验证任务 📝
-- `/done`：在代码完成后回写项目文档，让文档和代码重新对齐 ✅
+- `/apply`：按照提案进入实施阶段，推动代码改动真正落地 🧪
+- `/sync`：强制对齐项目代码和文档语义，处理双向漂移 🔄
+- `/done`：完成最终提交、清理工作区，并触发最后一次 sync ✅
 
 ## 🧠 设计理念
 
@@ -27,8 +29,9 @@
 
 - 代码是初始化阶段的重要事实来源
 - 需求探索、提案、任务、验证都有明确落盘位置
-- “完成”不只是代码写完，还包括文档与架构说明同步
+- “完成”不只是代码写完，还包括最终 sync、提交与工作区清理
 - 开发任务与验证任务显式拆分，避免只做实现、不做验证
+- `sync` 是一个独立阶段，不是附属动作
 
 你可以把它看成是一个轻量版的“文档对齐开发循环”：
 
@@ -36,7 +39,9 @@
 代码现状 -> /pro-init -> 项目基线文档
 需求讨论 -> /explore  -> 需求澄清
 方案设计 -> /propose  -> 提案/风险/任务/验证
-代码完成 -> /done     -> 文档回写与最终对齐
+进入实施 -> /apply    -> 按提案执行代码改动
+强制对齐 -> /sync     -> 代码/文档语义双向绑定
+最终收尾 -> /done     -> 提交、清理工作区、最终 sync
 ```
 
 ## 📁 默认目录结构
@@ -55,6 +60,7 @@
       proposal.md
       tasks.md
       validation.md
+      sync.md
 ```
 
 含义如下：
@@ -66,6 +72,7 @@
 - `changes/active/proposal.md`：当前需求的方案提案与风险说明
 - `changes/active/tasks.md`：开发任务和验证任务
 - `changes/active/validation.md`：验证计划、验证结果、残余风险
+- `changes/active/sync.md`：代码与文档的语义对齐状态、漂移记录与同步结果
 
 ## 🚀 安装
 
@@ -101,7 +108,7 @@ npx spec-workflow-kit init . --dry-run
 - `Claude Code`：安装 slash commands + 对应 skill
 - `Codex`：安装项目级 `pro-workflow` skill
 
-其中 `Codex` 这里默认不依赖 slash command 文件，而是通过 `pro-workflow` 这个 skill 以及阶段语义 `pro-init / explore / propose / done` 来承接同一套流程。🤝
+其中 `Codex` 这里默认不依赖 slash command 文件，而是通过 `pro-workflow` 这个 skill 以及阶段语义 `pro-init / explore / propose / apply / sync / done` 来承接同一套流程。🤝
 
 ## 🧪 适合什么项目
 

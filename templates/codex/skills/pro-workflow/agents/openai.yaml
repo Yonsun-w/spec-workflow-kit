@@ -1,3 +1,3 @@
 display_name: Pro Workflow
-short_description: Four-stage planning and documentation workflow for active software changes.
-default_prompt: Use the pro-workflow skill to initialize docs, explore a request, propose a change plan, or sync docs after coding.
+short_description: Multi-stage planning, implementation, and semantic sync workflow for active software changes.
+default_prompt: Use the pro-workflow skill to initialize docs, explore a request, propose a plan, apply implementation, force semantic sync, or close the workflow.

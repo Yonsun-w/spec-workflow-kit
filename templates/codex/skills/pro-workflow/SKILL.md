@@ -1,6 +1,6 @@
 ---
 name: pro-workflow
-description: Shared four-stage development workflow for open-source projects. Use when the user wants to initialize project docs from code, clarify a requirement, write an implementation proposal, or sync docs after coding. Equivalent stages are pro-init, explore, propose, and done.
+description: Shared development workflow for open-source projects. Use when the user wants to initialize project docs from code, clarify a requirement, write an implementation proposal, apply the implementation, force semantic sync between code and docs, or close the workflow. Equivalent stages are pro-init, explore, propose, apply, sync, and done.
 ---
 
 # Pro Workflow
@@ -21,6 +21,7 @@ Active change:
 - `.ai-flow/changes/active/proposal.md`
 - `.ai-flow/changes/active/tasks.md`
 - `.ai-flow/changes/active/validation.md`
+- `.ai-flow/changes/active/sync.md`
 
 ## Stage Semantics
 
@@ -39,16 +40,27 @@ Active change:
 - write the implementation proposal
 - record requirement changes, risks, implementation tasks, and verification tasks
 
+### `apply`
+
+- implement the approved proposal
+- update task and validation state while coding
+
+### `sync`
+
+- force semantic alignment between actual code and workflow documents
+- record drift, sync actions, and final alignment state
+
 ### `done`
 
-- inspect actual code changes
-- sync project docs back to reality
-- record validation results and residual risk
+- finalize delivery
+- run one last sync
+- clear or reset the active workspace for the next change
 
 ## Operating Rules
 
 - Use repository evidence before assumptions.
 - Keep the `.ai-flow/` files as the canonical workflow surface.
 - Separate implementation tasks from verification tasks.
+- Treat semantic sync as a first-class stage.
 - Correct the proposal when implementation diverges from the original plan.
 - Preserve unverified areas explicitly.
